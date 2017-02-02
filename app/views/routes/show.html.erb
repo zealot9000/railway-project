@@ -4,6 +4,10 @@
   <strong>Name:</strong>
   <%= @route.name %>
 <p>
+  
+<%= render 'station' %>
+
+<%= render 'train' %>
 
 <%= link_to 'Edit', edit_route_path(@route) %>
 <%= link_to 'Back', routes_path %>
