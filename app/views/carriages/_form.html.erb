@@ -1,0 +1,27 @@
+<%= form_for(@carriage) do |f| %>
+      <%= render 'common/errors', resource: @carriage %>
+
+  <div class="field">
+    <%= f.label 'Wagon type' %><br>
+    <%= f.text_field :type_w %>
+  </div>
+
+   <div class="field">
+    <%= f.label :low_seats %><br>
+    <%= f.number_field :low_seats %>
+  </div>
+
+   <div class="field">
+    <%= f.label :top_seats %><br>
+    <%= f.number_field :top_seats %>
+  </div>
+
+  <div class="field">
+    <%= f.label :train, "Train" %>
+    <%= f.collection_select :train_id, Train.all, :id, :number %>
+  </div>  
+
+  <div class="actions">
+    <%= f.submit "#{ @carriage.new_record? ? 'Create' : 'Edit' }" %>
+  </div>
+<% end %>

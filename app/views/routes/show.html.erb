@@ -5,9 +5,9 @@
   <%= @route.name %>
 <p>
   
-<%= render 'station' %>
+<%= render 'stations' %>
 
-<%= render 'train' %>
+<%= render 'trains' %>
 
 <% if @route.trains.empty? %>
   <p>There is no trains on the route</p>
@@ -19,10 +19,6 @@
       <% end %>
     </ul>
 <% end %> 
-
-
-
-
 
 <%= link_to 'Edit', edit_route_path(@route) %>
 <%= link_to 'Back', routes_path %>
