@@ -7,7 +7,7 @@
 
 <p>
   <strong>Type:</strong>
-  <%= @carriage.type_w %>
+  <%= @carriage.type_of_carriage %>
 </p>
 
 <p>
@@ -28,7 +28,7 @@
 <% if @carriage.train.nil? %>
     <p>Train is not set</p>
 <% else %>
-    <p>Carriage attach to train: <%= @carriage.train.number %></p>
+    <p>Carriage is attached to train: <%= @carriage.train.number %></p>
 <% end %>
 
 <%= link_to 'Edit', edit_carriage_path(@carriage) %> |

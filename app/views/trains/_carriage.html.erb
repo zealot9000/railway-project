@@ -1,0 +1,12 @@
+<ul>
+  <% if @train.carriages.present? %>
+    <% @train.carriages.each do |car| %>
+      <li>ID:<%= car.id %></li>
+      <li>Type:<%= car.type_of_carriage %></li>
+      <li>Top seats:<%= car.top_seats %></li>
+      <li>Low seats:<%= car.low_seats %></li>
+    <% end %>
+    <% else %>
+      This train has no carriages.
+  <% end %>
+</ul>

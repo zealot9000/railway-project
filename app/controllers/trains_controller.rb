@@ -1,4 +1,4 @@
-class TrainsController < ApplicationController
+  class TrainsController < ApplicationController
   before_action :set_train, only: [:show, :edit, :update, :destroy]
 
   def index

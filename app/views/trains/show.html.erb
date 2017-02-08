@@ -23,19 +23,12 @@
 </p>  
 
 <p>
-  <strong>Carriages</strong>
-  <ul>
-    <% if @train.carriages.present? %>
-      <% @train.carriages.each do |car| %>
-        <li>ID:<%= car.id %></li>
-        <li>Type:<%= car.type_w %></li>
-        <li>Top seats:<%= car.top_seats %></li>
-        <li>Low seats:<%= car.low_seats %></li>
-      <% end %>
-      <% else %>
-        This train has no carriages.
-    <% end %>
-  </ul>
+  <strong> Number of carriages:</strong> <%= @train.carriages.count %>
+ </p> 
+
+<p>
+  <strong>Carriage</strong>
+  <%= render 'carriage' %>
 </p>
 
 <%= link_to 'Edit', edit_train_path(@train) %> |
