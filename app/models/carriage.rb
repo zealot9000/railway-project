@@ -1,3 +1,5 @@
 class Carriage < ActiveRecord::Base
   belongs_to :train
-end  
+
+  validates :number, :top_seats, :bottom_seats, presence: true
+end

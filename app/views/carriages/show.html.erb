@@ -7,12 +7,12 @@
 
 <p>
   <strong>Type:</strong>
-  <%= @carriage.type_of_carriage %>
+  <%= @carriage.type %>
 </p>
 
 <p>
   <strong>Train ID:</strong>
-  <%= @carriage.train_id %>
+  <%= @carriage.train.number %>
 </p>
 
 <p>
@@ -22,7 +22,7 @@
 
 <p>
   <strong>Low seats:</strong>
-  <%= @carriage.low_seats %>
+  <%= @carriage.bottom_seats %>
 </p>
 
 <% if @carriage.train.nil? %>

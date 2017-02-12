@@ -3,12 +3,12 @@
 
   <div class="field">
     <%= f.label 'Wagon type' %><br>
-    <%= f.text_field :type_of_carriage %>
+    <%= f.select :type, ["EconomyCarriage","LuxCarriage", "CoupeCarriage", "SittingCarriage"]%>
   </div>
 
    <div class="field">
-    <%= f.label :low_seats %><br>
-    <%= f.number_field :low_seats %>
+    <%= f.label :bottom_seats %><br>
+    <%= f.number_field :bottom_seats %>
   </div>
 
    <div class="field">
@@ -17,9 +17,9 @@
   </div>
 
   <div class="field">
-    <%= f.label :train, "Train" %>
+    <%= f.label :train_id, "Add to train" %>
     <%= f.collection_select :train_id, Train.all, :id, :number %>
-  </div>  
+  </div>
 
   <div class="actions">
     <%= f.submit "#{ @carriage.new_record? ? 'Create' : 'Edit' }" %>
