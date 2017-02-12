@@ -4,5 +4,14 @@ class Train < ActiveRecord::Base
   has_many :tickets
   has_many :carriages
 
-  validates :number, presence: true
+  #validates :number, presence: true
+
+  before_create :set_number
+
+  private
+
+  def set_number
+    self.number = Train.all.count + 1
+  end
+
 end
