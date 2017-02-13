@@ -8,28 +8,30 @@
   <strong>Current station: </strong>
   <% if @train.current_station.present? %>
     <%= @train.current_station.title %>
-  <% else %>  
+  <% else %>
     Not specified
-  <% end %>  
-</p>  
+  <% end %>
+</p>
 
 <p>
   <strong>Route: </strong>
   <% if @train.route.present? %>
     <%= @train.route.name %>
-  <% else %>  
+  <% else %>
     Not specified
-  <% end %>  
-</p>  
-
-<p>
-  <strong> Number of carriages:</strong> <%= @train.carriages.count %>
- </p> 
-
-<p>
-  <strong>Carriage</strong>
-  <%= render 'carriage' %>
+  <% end %>
 </p>
+
+<p>
+  <strong> Number of carriages:</strong>
+    <% if @train.carriages.empty? %>
+    There is no train carriages
+  <% else %>
+    <%= render 'carriages', carriages: @train.carriages %>
+  <% end %>
+ </p>
+
+
 
 <%= link_to 'Edit', edit_train_path(@train) %> |
 <%= link_to 'Back', trains_path %>

@@ -1,35 +1,17 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>ID:</strong>
-  <%= @carriage.id %>
+  <strong>These carriage:</strong>
+  <% if @carriage.type.eql?('ComfortableCarriage') %>
+    <%= render 'comfortablecarriage', carriage: @carriage %>
+  <% elsif @carriage.type.eql?('CoupeCarriage') %>
+    <%= render 'coupecarriage', carriage: @carriage %>
+  <% elsif @carriage.type.eql?('EconomyCarriage') %>
+    <%= render 'economycarriage', carriage: @carriage %>
+  <% elsif @carriage.type.eql?('SittingCarriage') %>
+    <%= render 'sittingcarriage', carriage: @carriage %>
+  <% end %>
 </p>
-
-<p>
-  <strong>Type:</strong>
-  <%= @carriage.type %>
-</p>
-
-<p>
-  <strong>Train ID:</strong>
-  <%= @carriage.train.number %>
-</p>
-
-<p>
-  <strong>Top seats:</strong>
-  <%= @carriage.top_seats %>
-</p>
-
-<p>
-  <strong>Low seats:</strong>
-  <%= @carriage.bottom_seats %>
-</p>
-
-<% if @carriage.train.nil? %>
-    <p>Train is not set</p>
-<% else %>
-    <p>Carriage is attached to train: <%= @carriage.train.number %></p>
-<% end %>
 
 <%= link_to 'Edit', edit_carriage_path(@carriage) %> |
 <%= link_to 'Back', carriages_path %>

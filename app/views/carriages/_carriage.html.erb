@@ -1,8 +1,7 @@
-<% resource.each do |carriage| %>
-  <tr>
-    <td><%= "#{carriage.type} - #{carriage.number} - #{carriage.train}" %></td>
-    <td><%= link_to 'Show', carriage %></td>
-    <td><%= link_to 'Edit', edit_carriage_path(carriage) %></td>
-    <td><%= link_to 'Destroy', carriage, method: :delete, data: { confirm: 'Are you sure?'} %></td>
-  </tr>
-<% end %>
+<tr>
+  <td><%= carriage.number %></td>
+  <td><%= carriage.type %></td>
+  <td><%= link_to 'Show', carriage_path(carriage) %></td>
+  <td><%= link_to 'Edit', edit_carriage_path(carriage) %></td>
+  <td><%= link_to 'Delete', carriage_path(carriage), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+</tr>

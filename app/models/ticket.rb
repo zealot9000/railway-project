@@ -5,4 +5,4 @@ class Ticket < ActiveRecord::Base
   belongs_to :end_station, class_name: 'RailwayStation', foreign_key: :end_station_id
 
   validates :number, presence: true
-end  
+end

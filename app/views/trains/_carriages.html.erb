@@ -1,0 +1,53 @@
+<ul>
+  <% @train.carriages.ordered(@train.queue).each do |carriage| %>
+  <li>
+    <%= link_to "Carriage № #{carriage.number}", carriage_path(carriage) %>
+  </li>
+  <% end %>
+</ul>
+
+<ul>
+  <li>
+    <h3>Coupe carriages</h3>
+    <% if carriages.coupe.empty? %>
+      There is no train coupe carriages
+    <% else %>
+      Count of carriages: <%= carriages.coupe.count %><br>
+      Top seats: <%= carriages.coupe.total_top %><br>
+      Bottom seats: <%= carriages.coupe.total_bottom %>
+    <% end %>
+  </li>
+
+  <li>
+    <h3>Economy carriages</h3>
+     <% if carriages.economy.empty? %>
+      There is no train economy carriages
+    <% else %>
+      Count of carriages: <%= carriages.economy.count %><br>
+      Top seats: <%= carriages.economy.total_top %><br>
+      Bottom seats: <%= carriages.economy.total_bottom %><br>
+      Side top seats: <%= carriages.economy.total_side_top %><br>
+      Side bottom seats: <%= carriages.economy.total_side_bottom %><br>
+    <% end %>
+  </li>
+
+  <li>
+    <h3>Sitting carriages</h3>
+    <% if carriages.sitting.empty? %>
+      There is no train sitting carriages
+    <% else %>
+      Count of carriages: <%= carriages.sitting.count %><br>
+      Bottom seats: <%= carriages.sitting.total_sitting %><br>
+    <% end %>
+  </li>
+
+  <li>
+    <h3>Comfortable carriages</h3>
+    <% if carriages.comfortable.empty? %>
+      There is no train comfortable carriages
+    <% else %>
+      Count of carriages: <%= carriages.comfortable.count %><br>
+      Bottom seats: <%= carriages.comfortable.total_bottom %><br>
+    <% end %>
+  </li>
+</ul>
