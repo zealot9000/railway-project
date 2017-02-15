@@ -17,7 +17,7 @@
 </div>
 
 <div class="field">
-  <%= f.label :side_bottom_seats, 'Side bittim seats' %>
+  <%= f.label :side_bottom_seats, 'Side bottom seats' %>
   <%= f.text_field :side_bottom_seats %>
 </div>
 
@@ -28,7 +28,7 @@
 
 <div class="field">
   <%= f.label :type, 'Type of carriage' %>
-  <%= f.select :type, ['ComfortableCarriage', 'CoupeCarriage', 'EconomyCarriage', 'SittingCarriage'] %>
+  <%= f.select :type, Carriage::TYPES.values %>
 </div>
 
 

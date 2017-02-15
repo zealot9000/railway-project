@@ -1,0 +1,10 @@
+<li>
+  <h3>Coupe carriages</h3>
+  <% if carriages.coupe.empty? %>
+    There is no train coupe carriages
+  <% else %>
+    Count of carriages: <%= carriages.coupe.count %><br>
+    Top seats: <%= carriages.coupe.total_seats(:top_seats) %><br>
+    Bottom seats: <%= carriages.coupe.total_seats(:bottom_seats) %>
+  <% end %>
+</li>

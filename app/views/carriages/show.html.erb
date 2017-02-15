@@ -3,13 +3,13 @@
 <p>
   <strong>These carriage:</strong>
   <% if @carriage.type.eql?('ComfortableCarriage') %>
-    <%= render 'comfortablecarriage', carriage: @carriage %>
+    <%= render @carriage.type.downcase, carriage: @carriage %>
   <% elsif @carriage.type.eql?('CoupeCarriage') %>
-    <%= render 'coupecarriage', carriage: @carriage %>
+    <%= render @carriage.type.downcase, carriage: @carriage %>
   <% elsif @carriage.type.eql?('EconomyCarriage') %>
-    <%= render 'economycarriage', carriage: @carriage %>
+    <%= render @carriage.type.downcase, carriage: @carriage %>
   <% elsif @carriage.type.eql?('SittingCarriage') %>
-    <%= render 'sittingcarriage', carriage: @carriage %>
+    <%= render @carriage.type.downcase, carriage: @carriage %>
   <% end %>
 </p>
 

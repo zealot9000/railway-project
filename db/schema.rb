@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170213184542) do
+ActiveRecord::Schema.define(version: 20170215171925) do
 
   create_table "carriages", force: :cascade do |t|
     t.string   "type_of_carriage"
@@ -21,9 +21,9 @@ ActiveRecord::Schema.define(version: 20170213184542) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "type"
-    t.integer  "side_top_seats"
-    t.integer  "side_bottom_seats"
-    t.integer  "sitting_seats"
+    t.integer  "side_top_seats",    default: 0
+    t.integer  "side_bottom_seats", default: 0
+    t.integer  "sitting_seats",     default: 0
     t.integer  "number"
   end
 
