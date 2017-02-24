@@ -4,21 +4,10 @@
   <strong>Name:</strong>
   <%= @route.name %>
 <p>
-  
+
 <%= render 'stations' %>
 
-<%= render 'trains' %>
-
-<% if @route.trains.empty? %>
-  <p>There is no trains on the route</p>
-<% else %>
-  <p> Trains on the route:</p>
-    <ul>
-      <% @route.trains.each do |train| %>
-        <li><%= train.number %></li>
-      <% end %>
-    </ul>
-<% end %> 
+<%= render 'train' %>
 
 <%= link_to 'Edit', edit_route_path(@route) %>
 <%= link_to 'Back', routes_path %>

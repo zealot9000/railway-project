@@ -1,0 +1,12 @@
+<li>
+  <h3>Economy carriages</h3>
+  <% if carriages.economy.empty? %>
+    There is no train economy carriages
+  <% else %>
+    Count of carriages: <%= carriages.economy.count %><br>
+    Top seats: <%= carriages.economy.total_seats(:top_seats) %><br>
+    Bottom seats: <%= carriages.economy.total_seats(:bottom_seats) %><br>
+    Side top seats: <%= carriages.economy.total_seats(:side_top_seats) %><br>
+    Side bottom seats: <%= carriages.economy.total_seats(:side_bottom_seats) %><br>
+  <% end %>
+</li>

@@ -18,23 +18,23 @@
   def create
     @train = Train.new(train_params)
       if @train.save
-        redirect_to @train, notice: 'Train was successfully created.' 
+        redirect_to @train, notice: 'Train was successfully created.'
       else
-        render :new 
+        render :new
       end
   end
 
   def update
     if @train.update(train_params)
-      redirect_to @train, notice: 'Train was successfully updated.' 
+      redirect_to @train, notice: 'Train was successfully updated.'
     else
-      render :edit 
+      render :edit
     end
   end
 
   def destroy
     @train.destroy
-    redirect_to trains_url, notice: 'Train was successfully destroyed.' 
+    redirect_to trains_url, notice: 'Train was successfully destroyed.'
   end
 
   private
@@ -43,6 +43,6 @@
     end
 
     def train_params
-      params.require(:train).permit(:number, :route_id)
+      params.require(:train).permit(:number, :queue, :route_id)
     end
 end
