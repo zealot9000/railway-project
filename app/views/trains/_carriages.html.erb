@@ -1,6 +1,8 @@
-<ul>
-  <%= render 'coupecarriage', carriages: @train.carriages %>
-  <%= render 'economycarriage', carriages: @train.carriages %>
-  <%= render 'sittingcarriage', carriages: @train.carriages %>
-  <%= render 'comfortablecarriage', carriages: @train.carriages %>
-</ul>
+<p>
+  <strong>Carriages:</strong>  
+  <ul>
+    <% @train.carriages.each do |car| %>
+    <li><%= link_to "Carriage №#{car.number}", car %></li>
+    <% end %>
+  </ul>  
+</p>  

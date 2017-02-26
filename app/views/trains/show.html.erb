@@ -23,12 +23,16 @@
 </p>
 
 <p>
-  <strong> Number of carriages:</strong>
-    <% if @train.carriages.empty? %>
-    There is no train carriages
-  <% else %>
-    <%= render 'carriages', carriages: @train.carriages %>
-  <% end %>
+  <strong>Carriages:</strong>
+  <ul>
+    <% @train.carriages.each do |car| %>
+      <li><%= link_to "Carriage №#{car.number}", car %></li>
+    <% end %>
+  </ul>
+ </p>
+
+ <p>
+    <%= link_to "Add carriage", new_train_carriage_path(@train) %>
  </p>
 
 

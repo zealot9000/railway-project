@@ -6,4 +6,31 @@
 </p>
 
 <%= link_to 'Edit', edit_carriage_path(@carriage) %> |
-<%= link_to 'Back', carriages_path %>
+<%= link_to 'Back', @carriage.train %>
+
+<h1>Carriage №<%= @carriage.number %></h1>
+
+<p>
+  Train: <%= @carriage.train.number %>
+</p> 
+
+<p>
+  Top seats: <%= @carriage.top_seats %>
+</p> 
+
+<p>
+  Bottom seats: <%= @carriage.bottom_seats %>
+</p> 
+
+<p>
+  Side top seats: <%= @carriage.side_top_seats %>
+</p> 
+
+<p>
+  Side bottom seats: <%= @carriage.side_bottom_seats %>
+</p> 
+
+<p>
+  Sitting seats: <%= @carriage.sitting_seats %>
+</p> 
+
