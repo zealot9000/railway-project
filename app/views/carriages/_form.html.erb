@@ -1,4 +1,5 @@
-<%= form_for [@train, @carriage] do |f| %>
+<%= form_for([@train, carriage.becomes(Carriage)]) do |f| %>
+
 
   <div class="field">
     <%= f.label :top_seats, 'Top seats' %>

@@ -26,7 +26,7 @@
   <strong>Carriages:</strong>
   <ul>
     <% @train.carriages.each do |car| %>
-      <li><%= link_to "Carriage №#{car.number}", car %></li>
+      <li><%= link_to "Carriage №#{car.number}", car.becomes(Carriage) %></li>
     <% end %>
   </ul>
  </p>
