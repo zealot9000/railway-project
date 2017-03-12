@@ -1,0 +1,12 @@
+<h1>Search Tickets</h1>
+
+<div>
+  <%= render 'form' %>
+</div>
+
+<div>
+  <% if @search.result.present? %>
+    <h2>Search results:</h2>
+    <%= render 'result' %>
+  <% end %>
+</div>

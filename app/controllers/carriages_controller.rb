@@ -13,7 +13,7 @@ class CarriagesController < ApplicationController
     @carriage = Carriage.new
   end
 
-   def create
+  def create
     @carriage = @train.carriages.new(carriage_params)
     if @carriage.save
       redirect_to @train
@@ -24,7 +24,6 @@ class CarriagesController < ApplicationController
 
   def edit
   end
-
 
   def update
     if @carriage.update(carriage_params)

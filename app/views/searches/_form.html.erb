@@ -1,0 +1,15 @@
+<%= form_for @search, url: { action: 'show' } do |f| %>
+  <div class="field">
+    <%= f.label :start_station_id, 'Start station' %>
+    <%= f.collection_select :start_station_id, RailwayStation.all, :id, :title %>
+  </div>
+
+  <div class="field">
+    <%= f.label :end_station_id, 'End station' %>
+    <%= f.collection_select :end_station_id, RailwayStation.all, :id, :title %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit 'Search' %>
+  </div>
+<% end %>

@@ -16,6 +16,17 @@ class RailwayStation < ActiveRecord::Base
     station_route(route).try(:position)
   end  
 
+  def update_time(route, arrival, departure)
+    station = route_station(route)
+    station.update(arrival: arrival, departure: departure) if station
+  end
+
+  def time(route, time_type)
+    station_route(route).try(time_type)
+  end
+
+private
+
   def station_route(route)
     @station_route ||= railway_stations_routes.where(route: route).first
   end  
