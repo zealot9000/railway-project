@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   end  
   resources :routes
   resources :carriages
-  resources :tickets, only: [:create, :show]
+  resources :tickets, only: [:create, :show, :new]
   resource :search, only: [:create, :show]
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

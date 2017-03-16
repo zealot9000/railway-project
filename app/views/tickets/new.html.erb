@@ -3,16 +3,16 @@
   <%= render 'common/errors', resource: @ticket %>
 
   <div class="field">
-    <%= f.label :fio, 'ФИО' %>
-    <%= f.text_field :fio %>
+    <%= f.label :passenger_name, 'Passenger name' %>
+    <%= f.text_field :passenger_name %>
   </div>
 
   <div class="field">
-    <%= f.label :passport, 'Паспорт' %>
-    <%= f.text_field :passport %>
+    <%= f.label :passenger_passport, 'Passport' %>
+    <%= f.text_field :passenger_passport %>
   </div>
   <%= f.hidden_field :train_id %>
   <%= f.hidden_field :start_station_id %>
   <%= f.hidden_field :end_station_id %>
-  <%= f.submit 'Купить' %>
+  <%= f.submit 'Buy ticket' %>
 <% end %> 
