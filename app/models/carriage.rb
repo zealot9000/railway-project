@@ -14,8 +14,8 @@ class Carriage < ActiveRecord::Base
   # scope :sitting,           -> { where(type: 'SittingCarriage') }
   # scope :comfortable,       -> { where(type: 'ComfortableCarriage') }
 
-  TYPES.each do |k, v|
-    scope k.to_sym, -> { where(type: v) }
+  TYPES.each_pair do |type_name, type|
+    scope type_name, -> { where(type: type) }
   end
 
   # scope :total_top,         -> { sum(:top_seats) }
@@ -30,6 +30,10 @@ class Carriage < ActiveRecord::Base
 
   def set_number
     self.number = train.carriages.size + 1
+  end
+
+  def self.types
+    TYPES.values
   end
 
   def self.total_seats(type)

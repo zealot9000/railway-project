@@ -2,16 +2,10 @@
 
 <p>
   <strong>These carriage:</strong>
-  <% if @carriage.type.eql?('ComfortableCarriage') %>
     <%= render @carriage.type.downcase, carriage: @carriage %>
-  <% elsif @carriage.type.eql?('CoupeCarriage') %>
-    <%= render @carriage.type.downcase, carriage: @carriage %>
-  <% elsif @carriage.type.eql?('EconomyCarriage') %>
-    <%= render @carriage.type.downcase, carriage: @carriage %>
-  <% elsif @carriage.type.eql?('SittingCarriage') %>
-    <%= render @carriage.type.downcase, carriage: @carriage %>
-  <% end %>
 </p>
 
 <%= link_to 'Edit', edit_carriage_path(@carriage) %> |
-<%= link_to 'Back', carriages_path %>
+<%= link_to 'Back', @carriage.train %>
+
+

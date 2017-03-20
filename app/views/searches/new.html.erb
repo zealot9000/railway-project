@@ -1,0 +1,15 @@
+<h2>Buy ticket</h2>
+
+<p>
+  <strong>Train number:</strong>
+    <%= @train.number %>
+</p>
+<p>
+  <strong>Start station:</strong>
+  <%= @start_station.title %>
+</p>
+<p>
+  <strong>End station:</strong>
+  <%= @end_station.title %>
+</p>
+<%= render 'form', ticket: @ticket %>

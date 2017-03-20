@@ -1,9 +1,0 @@
-<li>
-  <h3>Comfortable carriages</h3>
-  <% if carriages.comfortable.empty? %>
-    There is no train comfortable carriages
-  <% else %>
-    Count of carriages: <%= carriages.comfortable.count %><br>
-    Bottom seats: <%= carriages.comfortable.total_seats(:bottom_seats) %><br>
-  <% end %>
-</li>

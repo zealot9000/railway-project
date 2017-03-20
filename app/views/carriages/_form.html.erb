@@ -1,44 +1,38 @@
-<%= form_for(carriage.becomes(Carriage)) do |f| %>
-<%= render 'common/errors', resource: carriage %>
-
-<div class="field">
-  <%= f.label :top_seats, 'Top seats' %>
-  <%= f.text_field :top_seats %>
-</div>
-
-<div class="field">
-  <%= f.label :bottom_seats, 'Bottom seats' %>
-  <%= f.text_field :bottom_seats %>
-</div>
-
-<div class="field">
-  <%= f.label :side_top_seats, 'Side top seats' %>
-  <%= f.text_field :side_top_seats %>
-</div>
-
-<div class="field">
-  <%= f.label :side_bottom_seats, 'Side bottom seats' %>
-  <%= f.text_field :side_bottom_seats %>
-</div>
-
-<div class="field">
-  <%= f.label :sitting_seats, 'Sitting seats' %>
-  <%= f.text_field :sitting_seats %>
-</div>
-
-<div class="field">
-  <%= f.label :type, 'Type of carriage' %>
-  <%= f.select :type, Carriage::TYPES.values %>
-</div>
+<%= form_for([@train, carriage.becomes(Carriage)]) do |f| %>
 
 
-<div class="field">
-  <%= f.label :train, "Train number" %>
+  <div class="field">
+    <%= f.label :top_seats, 'Top seats' %>
+    <%= f.text_field :top_seats %>
+  </div>
 
-  <%= f.collection_select :train_id, Train.all, :id, :number %>
-</div>
+  <div class="field">
+    <%= f.label :bottom_seats, 'Bottom seats' %>
+    <%= f.text_field :bottom_seats %>
+  </div>
 
-<div class="actions">
-  <%= f.submit "#{ @carriage.new_record? ? 'Create' : 'Edit' }" %>
-</div>
+  <div class="field">
+    <%= f.label :side_top_seats, 'Side top seats' %>
+    <%= f.text_field :side_top_seats %>
+  </div>
+
+  <div class="field">
+    <%= f.label :side_bottom_seats, 'Side bottom seats' %>
+    <%= f.text_field :side_bottom_seats %>
+  </div>
+
+  <div class="field">
+    <%= f.label :sitting_seats, 'Sitting seats' %>
+    <%= f.text_field :sitting_seats %>
+  </div>
+
+  <div class="field">
+    <%= f.label :type, 'Type of carriage' %>
+    <%= f.select :type, Carriage.types %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "#{ @carriage.new_record? ? 'Create' : 'Edit' }" %>
+  </div>
 <% end %>
+

@@ -1,9 +1,0 @@
-<li>
-  <h3>Sitting carriages</h3>
-  <% if carriages.sitting.empty? %>
-    There is no train sitting carriages
-  <% else %>
-    Count of carriages: <%= carriages.sitting.count %><br>
-    Bottom seats: <%= carriages.sitting.total_seats(:sitting_seats) %><br>
-  <% end %>
-</li>

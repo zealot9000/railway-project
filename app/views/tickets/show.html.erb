@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Станция отправления:</strong>
+  <%= @ticket.start_station.title %>
+</p>
+<p>
+  <strong>Станция прибытия:</strong>
+  <%= @ticket.end_station.title %>
+</p>
+
+<p>
+  <strong>Номер поезда:</strong>
+  <%= @ticket.train.number %>
+</p>

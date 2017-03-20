@@ -1,0 +1,24 @@
+<table>
+  <thead>
+    <tr>
+      <th>Train</th>
+      <th>Route</th>
+      <th>Departure</th>
+      <th>Arrival</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @search.result.each do |train| %>
+      <tr>
+        <td><%= train.number %></td>
+        <td><%= train.route.name %></td>
+        <td><%= @search.start_station.time(train.route, :departure) %></td>
+        <td><%= @search.end_station.time(train.route, :arrival) %></td>
+        <td>
+          <%= link_to 'Buy ticket', new_ticket_path(ticket: { train_id: train.id, start_station_id: @search.start_station.id, end_station_id: @search.end_station.id }) %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
