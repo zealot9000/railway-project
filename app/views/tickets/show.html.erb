@@ -1,4 +1,4 @@
-<p id="notice"><%= notice %></p>
+<h1> Ticket </h1>
 
 <p>
   <strong>Станция отправления:</strong>
@@ -13,3 +13,8 @@
   <strong>Номер поезда:</strong>
   <%= @ticket.train.number %>
 </p>
+
+<p>
+  <strong>Билет купил:</strong>
+  <%= @ticket.user.email %>
+</p>  

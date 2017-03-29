@@ -1,18 +1,27 @@
 Rails.application.routes.draw do
   devise_for :users
-  root 'welcome#index'
-  
-  resources :trains do
-    resources :carriages, shallow: true
-  end
-  resources :railway_stations do
-    patch :update_position, on: :member
-    patch :update_time, on: :member
-  end  
-  resources :routes
-  resources :carriages
+
   resources :tickets, only: [:create, :show, :new]
   resource :search, only: [:create, :show]
+
+  namespace :admin do
+    resources :trains do
+     resources :carriages, shallow: true
+    end
+
+    resources :routes
+    resources :carriages
+    resources :tickets
+
+    resources :railway_stations do
+      patch :update_position, on: :member
+      patch :update_time, on: :member
+    end  
+  end  
+
+  get 'welcome/index'
+
+  root 'welcome#index'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

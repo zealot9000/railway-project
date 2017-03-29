@@ -1,0 +1,10 @@
+<% if @route.trains.empty? %>
+  <p>There is no trains on the route</p>
+<% else %>
+  <p> Trains on the route:</p>
+    <ul>
+      <% @route.trains.each do |train| %>
+        <li><%= train.number %></li>
+      <% end %>
+    </ul>
+<% end %> 

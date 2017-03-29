@@ -1,0 +1,18 @@
+<%= form_for [:admin, @route] do |f| %>
+    <%= render 'common/errors', resource: @route %>
+
+    <div class="field">
+      <%= f.label :name %><br>
+      <%= f.text_field :name %>
+    </div>
+
+    <div class="field">
+      <%= f.label :railway_station_ids, "Station list" %>
+      <%= f.collection_select :railway_station_ids, RailwayStation.all, :id, :title, {}, { multiple: true } %>
+    </div>
+
+    <div class="actions">
+      <%= f.submit "#{ @route.new_record? ? 'Create' : 'Update' }" %>
+    </div>
+<% end %>
+
