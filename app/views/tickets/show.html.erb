@@ -1,20 +1,19 @@
-<h1> Ticket </h1>
-
 <p>
-  <strong>Станция отправления:</strong>
+  <strong>Train number:</strong>
+  <%= @ticket.train.number %>
+</p>
+<p>
+  <strong>Departure station:</strong>
   <%= @ticket.start_station.title %>
 </p>
 <p>
-  <strong>Станция прибытия:</strong>
+  <strong>Arrival station:</strong>
   <%= @ticket.end_station.title %>
 </p>
-
 <p>
-  <strong>Номер поезда:</strong>
-  <%= @ticket.train.number %>
+  <strong>Passenger:</strong>
+  <%= @ticket.passenger_name %>
+  <%= @ticket.passenger_passport %>
 </p>
 
-<p>
-  <strong>Билет купил:</strong>
-  <%= @ticket.user.email %>
-</p>  
+<%= link_to 'Tickets list', tickets_path %>
