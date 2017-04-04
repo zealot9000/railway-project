@@ -1,0 +1,39 @@
+<p>
+  <strong>Number:</strong>
+  <%= @train.number %>
+</p>
+<p>
+  <strong>Current station: </strong>
+  <% if @train.current_station.present? %>
+    <%= @train.current_station.title %>
+  <% else %>
+    Not specified
+  <% end %>
+</p>
+
+<p>
+  <strong>Route: </strong>
+  <% if @train.route.present? %>
+    <%= @train.route.name %>
+  <% else %>
+    Not specified
+  <% end %>
+</p>
+
+<p>
+  <strong>Carriages:</strong>
+  <ul>
+    <% @train.carriages.each do |car| %>
+      <li><%= link_to "Carriage №#{car.number}", [:admin, car.becomes(Carriage)] %></li>
+    <% end %>
+  </ul>
+ </p>
+
+ <p>
+    <%= link_to "Add carriage", new_admin_train_carriage_path(@train) %>
+ </p>
+
+
+
+<%= link_to 'Edit', edit_admin_train_path(@train) %> |
+<%= link_to 'Back', admin_trains_path %>

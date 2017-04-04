@@ -1,18 +1,15 @@
-<h1>Купить билет</h1>
-<%= form_for(@ticket) do |f| %>
-  <%= render 'common/errors', resource: @ticket %>
+<h2>Buy ticket</h2>
 
-  <div class="field">
-    <%= f.label :passenger_name, 'Passenger name' %>
-    <%= f.text_field :passenger_name %>
-  </div>
-
-  <div class="field">
-    <%= f.label :passenger_passport, 'Passport' %>
-    <%= f.text_field :passenger_passport %>
-  </div>
-  <%= f.hidden_field :train_id %>
-  <%= f.hidden_field :start_station_id %>
-  <%= f.hidden_field :end_station_id %>
-  <%= f.submit 'Buy ticket' %>
-<% end %> 
+<p>
+  <strong>Train number:</strong>
+    <%= @train.number %>
+</p>
+<p>
+  <strong>Start station:</strong>
+  <%= @start_station.title %>
+</p>
+<p>
+  <strong>End station:</strong>
+  <%= @end_station.title %>
+</p>
+<%= render 'form', ticket: @ticket %>

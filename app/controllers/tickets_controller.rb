@@ -1,14 +1,20 @@
 class TicketsController < ApplicationController
+  before_action :authenticate_user!
+  before_action :set_ticket, only: [:show, :destroy]
   before_action :pre_order, only: [:new, :create]
+
+  def index
+    @tickets = current_user.tickets
+  end
 
   def new
     @ticket = Ticket.new(new_ticket_params)
   end
 
   def create
-    @ticket = Ticket.new(ticket_params)
+    @ticket = current_user.tickets.new(ticket_params)
     if @ticket.save
-      redirect_to @ticket
+      redirect_to @ticket, notice: 'Successfully purchased ticket'
     else
       render :new
     end
@@ -18,7 +24,16 @@ class TicketsController < ApplicationController
     @ticket = Ticket.find(params[:id])
   end
 
+  def destroy
+    @ticket.destroy
+    redirect_to tickets_path
+  end
+
   private
+
+  def set_ticket
+    @ticket = current_user.tickets.find(params[:id])
+  end
 
   def pre_order
     @train = Train.find(new_ticket_params[:train_id])
