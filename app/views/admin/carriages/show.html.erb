@@ -1,0 +1,9 @@
+<p>
+  <strong>These carriage:</strong>
+    <%= render @carriage.type.downcase, carriage: @carriage %>
+</p>
+
+<%= link_to 'Edit', edit_admin_carriage_path(@carriage) %> |
+<%= link_to 'Back', [:admin, @carriage.train] %>
+
+

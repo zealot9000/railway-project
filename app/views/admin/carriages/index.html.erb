@@ -1,0 +1,19 @@
+<h1>Listing Carriages</h1>
+
+<table>
+  <thead>
+  <tr>
+    <th>Carriage type</th>
+    <th colspan="3"></th>
+  </tr>
+  </thead>
+
+  <tbody>
+    <%= render partial: "carriage", collection: @carriages %>
+  </tbody>
+
+</table>
+
+<br>
+
+<%= link_to 'Add carriage', new_carriage_path %>

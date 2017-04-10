@@ -1,0 +1,25 @@
+<p>
+  <strong>User:</strong>
+  <%= @ticket.user.email %>
+</p>
+
+<p>
+  <strong>Train number:</strong>
+  <%= @ticket.train.number %>
+</p>
+<p>
+  <strong>Start station:</strong>
+  <%= @ticket.start_station.title %>
+</p>
+<p>
+  <strong>End station:</strong>
+  <%= @ticket.end_station.title %>
+</p>
+
+<p>
+  <strong>Passenger:</strong><br>
+  name: <%= @ticket.passenger_name %><br>
+  passport: <%= @ticket.passenger_passport %>
+</p>
+
+<%= link_to 'Tickets list', admin_tickets_path %>
