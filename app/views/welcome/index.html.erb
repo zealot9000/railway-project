@@ -1,7 +1,7 @@
-<h1>Welcome!</h1>
+<h1><%= t('.title') %></h1>
 <strong>
-  <p><%= link_to 'Stations list', admin_railway_stations_path %></p>
-  <p><%= link_to 'Trains list', admin_trains_path %></p>
-  <p><%= link_to 'Routes list', admin_routes_path %></p>
-  <p><%= link_to 'Tickets search', search_path %></p>
+  <p><%= link_to t('.stations_list'), admin_railway_stations_path %></p>
+  <p><%= link_to t('.trains_list'), admin_trains_path %></p>
+  <p><%= link_to t('.routes_list'), admin_routes_path %></p>
+  <p><%= link_to t('.ticket_search'), search_path %></p>
 </strong>
