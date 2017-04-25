@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   devise_for :users
 
   resources :tickets, only: [:create, :show, :new, :index]
-  resource :search, only: [:create, :show]
+  resource :search, only: [:create, :show, :edit, :create]
 
   namespace :admin do
     resources :trains do
@@ -21,7 +21,7 @@ Rails.application.routes.draw do
 
   get 'welcome/index'
 
-  root 'welcome#index'
+  root 'searches#show'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

@@ -1,0 +1,49 @@
+ru:
+  common:
+    create_new_station: 'Создать новую станцию'
+    create_new_train:   'Создать новый поезд'
+    add_carriage: 'Добавить вагон'
+    back: 'Назад'
+    show: 'Просмотр'
+    create: 'Создать'
+    edit: 'Редактирование'
+    destroy: 'Удалить'
+    are_you_sure: 'Вы уверены?'
+    errors: 'При заполнении формы возникли ошибки'
+  welcome:
+    index:
+      title: 'Добро пожаловать!' 
+      stations_list: 'Список станций'
+      trains_list: 'Список поездов' 
+      routes_list: 'Список маршрутов'
+      tickets_search: 'Поиск билетов'
+  admin:  
+    railway_stations:
+      new:
+        title: 'Новая станция' 
+      index:
+        create_new_station: 'Создать новую станцию'  
+        list: 'Название станции' 
+        title: 'Список станций'
+      show:
+        title: 'Название станции:' 
+      edit:
+        title: 'Изменить станцию'   
+      form:
+        submit: '%{action} станцию' 
+    trains:
+      new:
+        title: 'Новый поезд'
+      index:
+        number: 'Номер поезда:'
+        list: 'Список поездов'   
+      show:
+        carriage_n: 'Вагон №' 
+        carriages: 'Вагоны:' 
+        route: 'Маршрут:' 
+        number: 'Номер поезда:'
+        current_station:  'Текущая станция' 
+      edit:
+        title: 'Изменить поезд'  
+      form:
+        submit: '%{action} поезд'  

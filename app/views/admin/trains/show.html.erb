@@ -1,9 +1,9 @@
 <p>
-  <strong>Number:</strong>
+  <strong><%= t('.number') %></strong>
   <%= @train.number %>
 </p>
 <p>
-  <strong>Current station: </strong>
+  <strong><%= t('.current_station') %></strong>
   <% if @train.current_station.present? %>
     <%= @train.current_station.title %>
   <% else %>
@@ -12,7 +12,7 @@
 </p>
 
 <p>
-  <strong>Route: </strong>
+  <strong><%= t('.route') %></strong>
   <% if @train.route.present? %>
     <%= @train.route.name %>
   <% else %>
@@ -21,19 +21,19 @@
 </p>
 
 <p>
-  <strong>Carriages:</strong>
+  <strong><%= t('.carriages') %></strong>
   <ul>
     <% @train.carriages.each do |car| %>
-      <li><%= link_to "Carriage №#{car.number}", [:admin, car.becomes(Carriage)] %></li>
+      <li><%= link_to "#{t('.carriage_n')} #{car.number}", [:admin, car.becomes(Carriage)] %></li>
     <% end %>
   </ul>
  </p>
 
  <p>
-    <%= link_to "Add carriage", new_admin_train_carriage_path(@train) %>
+    <%= link_to t('common.add_carriage'), new_admin_train_carriage_path(@train) %>
  </p>
 
 
 
-<%= link_to 'Edit', edit_admin_train_path(@train) %> |
-<%= link_to 'Back', admin_trains_path %>
+<%= link_to t('common.edit'), edit_admin_train_path(@train) %> |
+<%= link_to t('common.back'), admin_trains_path %>
