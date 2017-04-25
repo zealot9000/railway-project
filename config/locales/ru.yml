@@ -5,6 +5,7 @@ ru:
     add_carriage: 'Добавить вагон'
     back: 'Назад'
     show: 'Просмотр'
+    create: 'Создать'
     edit: 'Редактирование'
     destroy: 'Удалить'
     are_you_sure: 'Вы уверены?'

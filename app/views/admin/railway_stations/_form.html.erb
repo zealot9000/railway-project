@@ -7,6 +7,6 @@
   </div>
 
   <div class="actions">
-    <%= f.submit t('.submit', action: @railway_station.new_record? ? 'Создать' : 'Изменить' ) %>
+    <%= f.submit t('.submit', action: @railway_station.new_record? ? t('common.create') : t('common.edit')) %>
   </div>
 <% end %>
