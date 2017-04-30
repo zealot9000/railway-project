@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170403212730) do
+ActiveRecord::Schema.define(version: 20170430085318) do
 
   create_table "carriages", force: :cascade do |t|
     t.string   "type_of_carriage"
@@ -26,6 +26,8 @@ ActiveRecord::Schema.define(version: 20170403212730) do
     t.integer  "sitting_seats",     default: 0
     t.integer  "number"
   end
+
+  add_index "carriages", ["id", "type"], name: "index_carriages_on_id_and_type"
 
   create_table "railway_stations", force: :cascade do |t|
     t.string   "title"
@@ -43,6 +45,9 @@ ActiveRecord::Schema.define(version: 20170403212730) do
     t.time    "departure_time"
   end
 
+  add_index "railway_stations_routes", ["railway_station_id"], name: "index_railway_stations_routes_on_railway_station_id"
+  add_index "railway_stations_routes", ["route_id"], name: "index_railway_stations_routes_on_route_id"
+
   create_table "routes", force: :cascade do |t|
     t.string   "name"
     t.datetime "created_at"
@@ -59,6 +64,11 @@ ActiveRecord::Schema.define(version: 20170403212730) do
     t.string  "passenger_passport"
   end
 
+  add_index "tickets", ["end_station_id"], name: "index_tickets_on_end_station_id"
+  add_index "tickets", ["start_station_id"], name: "index_tickets_on_start_station_id"
+  add_index "tickets", ["train_id"], name: "index_tickets_on_train_id"
+  add_index "tickets", ["user_id"], name: "index_tickets_on_user_id"
+
   create_table "trains", force: :cascade do |t|
     t.integer  "number"
     t.datetime "created_at",                        null: false
@@ -67,6 +77,9 @@ ActiveRecord::Schema.define(version: 20170403212730) do
     t.integer  "current_station_id"
     t.boolean  "queue",              default: true
   end
+
+  add_index "trains", ["current_station_id"], name: "index_trains_on_current_station_id"
+  add_index "trains", ["route_id"], name: "index_trains_on_route_id"
 
   create_table "users", force: :cascade do |t|
     t.string   "name"
