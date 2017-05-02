@@ -16,3 +16,4 @@
 !/log/.keep
 /tmp
 /.c9
+sendgrid.env
