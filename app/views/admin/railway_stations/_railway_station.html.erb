@@ -1,5 +1,8 @@
 <tr>
   <td><%= railway_station.title %></td>
+    
+    <%= render 'form', railway_station: @railway_station %>
+
   <td><%= link_to t('common.show'), [:admin, railway_station] %></td>
   <td><%= link_to t('common.edit'), edit_admin_railway_station_path(railway_station) %></td>
   <td><%= link_to t('common.destroy'), [:admin, railway_station], method: :delete, data: { confirm: "#{t('common.are_you_sure')}" } %></td>
