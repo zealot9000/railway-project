@@ -23,6 +23,7 @@ $(document).ready(function() {
       case "economycarriage":
       $('#sitting').addClass("hidden");
       $('#side_top, #side_bottom, #top, #bottom').removeClass("hidden");
+      break;
     };  
   });
 }); 
