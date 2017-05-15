@@ -1,32 +1,32 @@
 <%= form_for [:admin, @train, carriage.becomes(Carriage)] do |f| %>
 
 
-  <div class="field">
+  <div class="field hidden" id="top">
     <%= f.label :top_seats, 'Top seats' %>
     <%= f.text_field :top_seats %>
   </div>
 
-  <div class="field">
+  <div class="field hidden" id="bottom">
     <%= f.label :bottom_seats, 'Bottom seats' %>
     <%= f.text_field :bottom_seats %>
   </div>
 
-  <div class="field">
+  <div class="field hidden" id="side_top">
     <%= f.label :side_top_seats, 'Side top seats' %>
     <%= f.text_field :side_top_seats %>
   </div>
 
-  <div class="field">
+  <div class="field hidden" id="side_bottom">
     <%= f.label :side_bottom_seats, 'Side bottom seats' %>
     <%= f.text_field :side_bottom_seats %>
   </div>
 
-  <div class="field">
+  <div class="field hidden" id="sitting">
     <%= f.label :sitting_seats, 'Sitting seats' %>
     <%= f.text_field :sitting_seats %>
   </div>
 
-  <div class="field">
+  <div class="field" id="field_carriage_type">
     <%= f.label :type, 'Type of carriage' %>
     <%= f.select :type, Carriage.types %>
   </div>

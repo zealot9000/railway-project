@@ -1,5 +1,6 @@
 source 'http://rubygems.org'
-ruby '2.2.7'
+#ruby '2.2.7' heroku
+ruby '2.1.1'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.5'

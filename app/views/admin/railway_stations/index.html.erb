@@ -9,7 +9,19 @@
   </thead>
 
   <tbody>
-    <%= render @railway_stations %>
+    <% @railway_stations.each do |railway_station| %>
+      <tr>
+        <td>
+          <div id="railway_station_title_<%= railway_station.id %>">
+            <%= railway_station.title %>
+          </div>
+          <%= render 'form', station: railway_station, hidden: true %>
+        </td>
+        <td><%= link_to 'Show', [:admin, railway_station] %></td>
+        <td><%= link_to 'Edit', '', class: 'edit_station', data: { station_id: railway_station.id } %></td>
+        <td><%= link_to 'Destroy', [:admin, railway_station], method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
   </tbody>
 </table>
 
